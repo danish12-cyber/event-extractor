@@ -1,11 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #a29bfe;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+html, body, #root {
+  /* Clean Light Theme Background */
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+  color: #2d3436 !important;
+}
+
+/* Global utility for text visibility */
+.text-shadow-sm { text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+.text-shadow-md { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.text-shadow-lg { text-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+/* Force Bootstrap text utilities to be visible in Light mode */
+.text-muted { color: #636e72 !important; }
+.text-secondary { color: #636e72 !important; }
+.text-dark { color: #2d3436 !important; }
+
+/* Form Elements Light Mode */
+input, textarea, select {
+  background-color: #ffffff !important;
+  color: #2d3436 !important;
+  border: 1px solid #dfe6e9 !important;
+}
+
+input::placeholder {
+  color: #b2bec3 !important;
+}
+
+input:focus, textarea:focus {
+  background-color: #ffffff !important;
+  color: #2d3436 !important;
+  border-color: #fbcf33 !important; /* Warning Yellow Accent */
+  box-shadow: 0 0 0 0.25rem rgba(253, 203, 110, 0.25) !important;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
