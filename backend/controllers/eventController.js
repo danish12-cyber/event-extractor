@@ -5,7 +5,8 @@ exports.extractEvents = async (req, res) => {
   try {
     const { url } = req.body;
 
-    const response = await axios.post("http://127.0.0.1:8000/extract", { url });
+    const mlServiceUrl = process.env.ML_SERVICE_URL || "http://127.0.0.1:8000";
+    const response = await axios.post(`${mlServiceUrl}/extract`, { url });
     const data = response.data;
     console.log("ML Response:", data);
 

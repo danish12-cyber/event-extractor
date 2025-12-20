@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import config from "../config";
 import "./EventExtractor.css";
 
 function EventExtractor() {
@@ -18,7 +19,7 @@ function EventExtractor() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/events/extract", {
+      const res = await axios.post(`${config.API_BASE_URL}/api/events/extract`, {
         url,
         userId,
       });

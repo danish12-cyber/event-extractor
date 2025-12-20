@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import config from "../config";
 
 const History = () => {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/events/history")
+    axios.get(`${config.API_BASE_URL}/api/events/history`)
       .then(res => setHistory(res.data))
       .catch(err => console.error(err));
   }, []);
