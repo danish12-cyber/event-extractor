@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import EventExtractor from './pages/EventExtractor';
 import History from './pages/History';
 import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 import Loader from './components/Loader';
 import PageTransition from './components/PageTransition';
 import { ToastContainer } from 'react-toastify';
@@ -27,6 +28,7 @@ function App() {
       <div className="main-content" style={{ marginTop: '80px' }}>
         <Routes>
           <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+          <Route path="/dashboard" element={<PageTransition><Dashboard /></PageTransition>} />
           <Route path="/extractor" element={<PageTransition><EventExtractor /></PageTransition>} />
           <Route path="/history" element={<PageTransition><History /></PageTransition>} />
           <Route path="/about" element={<PageTransition><About /></PageTransition>} />

@@ -18,8 +18,14 @@ const History = () => {
       </h2>
 
       {history.length === 0 ? (
-        <div className="text-center text-secondary p-5 card bg-white border-0 shadow-sm">
-          <h4>No history found yet.</h4>
+        <div className="text-center text-secondary p-5 card border-0 shadow-sm"
+             style={{ 
+               background: "rgba(255, 255, 255, 0.05)", 
+               backdropFilter: "blur(10px)",
+               borderRadius: "20px",
+               border: "1px solid rgba(255, 255, 255, 0.1)"
+             }}>
+          <h4 className="text-white">No history found yet.</h4>
           <p>Go to the Extractor page to start analyzing news!</p>
         </div>
       ) : (
@@ -27,11 +33,18 @@ const History = () => {
           {history.map((item, index) => (
             <div className="col-md-6 col-lg-4 mb-4" key={index}>
               <div className="card h-100 shadow-sm border-0 animate__animated animate__fadeInUp" 
-                   style={{ animationDelay: `${index * 0.1}s`, borderRadius: "15px", background: "rgba(255,255,255,0.95)", color: "#2d3436" }}>
+                   style={{ 
+                     animationDelay: `${index * 0.1}s`, 
+                     borderRadius: "15px", 
+                     background: "rgba(255, 255, 255, 0.05)", 
+                     backdropFilter: "blur(10px)",
+                     border: "1px solid rgba(255, 255, 255, 0.1)",
+                     color: "#fff"
+                   }}>
                 <div className="card-body">
                   <div className="d-flex justify-content-between mb-2">
                     <small className="text-muted">{item.publishDate || "No Date"}</small>
-                    <small className="badge bg-light text-dark">{new Date(item.createdAt).toLocaleDateString()}</small>
+                    <small className="badge bg-secondary text-white">{new Date(item.createdAt).toLocaleDateString()}</small>
                   </div>
                   
                   <h5 className="card-title text-truncate" title={item.url}>

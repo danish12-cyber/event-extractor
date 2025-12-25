@@ -1,14 +1,10 @@
-const eventController = require("../controllers/eventController");
 const express = require("express");
 const router = express.Router();
-const Event = require("../models/Event");
-const axios = require("axios");
+const eventController = require("../controllers/eventController");
+const Event = require("../models/Event"); // Keep for history route
 
-// Save extracted data
-// Save extracted data
-router.post("/save", eventController.saveEvent);
+// Extract event (Calls Controller)
 router.post("/extract", eventController.extractEvents);
-
 
 // Fetch all saved history
 router.get("/history", async (req, res) => {

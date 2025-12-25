@@ -17,11 +17,11 @@ body {
 }
 
 html, body, #root {
-  /* Clean Light Theme Background */
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%) !important;
+  /* Dark Premium Theme Background */
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important; /* Deep Blue Gradient */
   background-attachment: fixed !important;
   min-height: 100vh;
-  color: #2d3436 !important;
+  color: #ffffff !important;
 }
 
 /* Global utility for text visibility */
@@ -30,9 +30,10 @@ html, body, #root {
 .text-shadow-lg { text-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 
 /* Force Bootstrap text utilities to be visible in Light mode */
-.text-muted { color: #636e72 !important; }
-.text-secondary { color: #636e72 !important; }
-.text-dark { color: #2d3436 !important; }
+/* Force Bootstrap text utilities to be visible in Dark mode */
+.text-muted { color: #b2bec3 !important; }
+.text-secondary { color: #b2bec3 !important; }
+.text-dark { color: #ffffff !important; } /* Invert text-dark to white for compatibility */
 
 /* Form Elements Light Mode */
 input, textarea, select {

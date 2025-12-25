@@ -40,7 +40,12 @@ function EventExtractor() {
   return (
     <div className="container mt-5 pt-4">
       <div className="card shadow-lg p-5 border-0" 
-           style={{ background: "rgba(255, 255, 255, 0.9)", borderRadius: "20px" }}>
+           style={{ 
+             background: "rgba(255, 255, 255, 0.05)", 
+             backdropFilter: "blur(10px)",
+             border: "1px solid rgba(255, 255, 255, 0.1)",
+             borderRadius: "20px" 
+           }}>
         <h2 className="text-center mb-4 fw-bold text-primary">🔍 AI Event Extractor</h2>
         <p className="text-center text-muted mb-4">Paste a URL below to automatically extract summary and key events.</p>
 
@@ -52,7 +57,7 @@ function EventExtractor() {
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder="Paste article URL here (e.g. CNN, BBC)..."
-              style={{ borderRadius: "10px", padding: "15px" }}
+              style={{ borderRadius: "10px", padding: "15px", background: "rgba(0,0,0,0.2)", color: "#fff", border: "1px solid rgba(255,255,255,0.1)" }}
             />
           </div>
 
@@ -67,7 +72,7 @@ function EventExtractor() {
 
         {result && (
           <div className="mt-5 animate__animated animate__fadeInUp">
-            <div className="p-4 rounded-3 mb-4" style={{ backgroundColor: "#f8f9fa", borderLeft: "5px solid #6c5ce7" }}>
+            <div className="p-4 rounded-3 mb-4" style={{ backgroundColor: "rgba(0,0,0,0.2)", borderLeft: "5px solid #6c5ce7" }}>
               <h5 className="fw-bold text-dark">📌 Summary</h5>
               <p className="text-secondary">{result.summary}</p>
             </div>

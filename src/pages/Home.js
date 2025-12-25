@@ -34,10 +34,17 @@ function Home() {
         ].map((feature, i) => (
             <div className="col-md-4 mb-4" key={i}>
                 <div className="card h-100 border-0 shadow-sm p-4 animate__animated animate__fadeInUp" 
-                     style={{ animationDelay: `${0.2 + (i * 0.2)}s`, borderRadius: "20px", background: "rgba(255,255,255,0.9)", color: "#2d3436" }}>
-                    <div className="display-4 mb-3 text-primary">{feature.icon}</div>
+                     style={{ 
+                       animationDelay: `${0.2 + (i * 0.2)}s`, 
+                       borderRadius: "20px", 
+                       background: "rgba(255, 255, 255, 0.05)", 
+                       backdropFilter: "blur(10px)",
+                       border: "1px solid rgba(255, 255, 255, 0.1)",
+                       color: "#fff" 
+                     }}>
+                    <div className="display-4 mb-3 text-primary" style={{ textShadow: "0 0 20px rgba(108, 92, 231, 0.5)" }}>{feature.icon}</div>
                     <h4 className="fw-bold">{feature.title}</h4>
-                    <p className="text-muted">{feature.text}</p>
+                    <p className="text-secondary">{feature.text}</p>
                 </div>
             </div>
         ))}
